@@ -21,7 +21,6 @@ public class AccountService {
         return accountRepo.findById(id);
     }
 
-    @Transactional
     public Account saveAccount(Account account){
         return accountRepo.save(account);
     }

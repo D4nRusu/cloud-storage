@@ -11,7 +11,5 @@ import java.util.Optional;
 
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Long> {
-    // List<Account> findById(@Param("accountId") long accountId);
-
     Optional<Account> findById(long accountId);
 }

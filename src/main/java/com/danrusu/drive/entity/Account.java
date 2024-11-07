@@ -12,24 +12,28 @@ import lombok.Setter;
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "account_id")
     private long accountId;
 
     private String email;
 
-    @JsonIgnore
     private String salt;
 
-    @JsonIgnore
     private String passhash;
 
     public Account(){
     }
 
-    public Account(String email, String salt, String passhash){
+    public Account(String email, String passhash){
         this.email = email;
         this.salt = salt;
         this.passhash = passhash;
+    }
+
+    // DELETE LATER, USED FOR DEBUGGING
+    public String toString(){
+        return this.accountId + " " + this.email + " " + this.passhash;
     }
 
 }
