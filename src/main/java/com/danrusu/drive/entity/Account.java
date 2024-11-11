@@ -18,8 +18,10 @@ public class Account {
 
     private String email;
 
-    private String salt;
+    private String username;
 
+    private String salt;
+    
     private String passhash;
 
     public Account(){
