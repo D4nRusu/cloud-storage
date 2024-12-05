@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -29,6 +30,12 @@ public class AccountController {
     public Optional<Account> getAccountById(@PathVariable Long id){
         Optional<Account> account = accountService.getAccountById(id);
         return account;
+    }
+
+    @GetMapping
+    public List<Account> getAllAccounts(){
+        List<Account> accounts = accountService.findAll();
+        return accounts;
     }
 
     @DeleteMapping("/{id}")
