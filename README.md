@@ -1,2 +1,2 @@
-# drive
- Cloud storage application
+# Cloud storage application
+Currently only implemented a simplistic SpringBoot Rest API
